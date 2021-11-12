@@ -16,6 +16,8 @@
 		276197E9273CAA870052DC4F /* sound-tap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 276197E6273CAA870052DC4F /* sound-tap.mp3 */; };
 		276197EA273CAA870052DC4F /* sound-ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 276197E7273CAA870052DC4F /* sound-ding.mp3 */; };
 		276197EB273CAA870052DC4F /* sound-rise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 276197E8273CAA870052DC4F /* sound-rise.mp3 */; };
+		276197F4273CFB490052DC4F /* notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 276197F3273CFB490052DC4F /* notes.md */; };
+		276197F6273CFC270052DC4F /* NoteImages in Resources */ = {isa = PBXBuildFile; fileRef = 276197F5273CFC270052DC4F /* NoteImages */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		276197E7273CAA870052DC4F /* sound-ding.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-ding.mp3"; sourceTree = "<group>"; };
 		276197E8273CAA870052DC4F /* sound-rise.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-rise.mp3"; sourceTree = "<group>"; };
 		276197F2273CACDD0052DC4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		276197F3273CFB490052DC4F /* notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = notes.md; path = Devote/notes.md; sourceTree = SOURCE_ROOT; };
+		276197F5273CFC270052DC4F /* NoteImages */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = NoteImages; path = Devote/NoteImages; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 		276197D2273CA4FA0052DC4F /* Devote */ = {
 			isa = PBXGroup;
 			children = (
+				276197F5273CFC270052DC4F /* NoteImages */,
+				276197F3273CFB490052DC4F /* notes.md */,
 				276197F2273CACDD0052DC4F /* Info.plist */,
 				276197D3273CA4FA0052DC4F /* DevoteApp.swift */,
 				276197F1273CABC90052DC4F /* Model */,
@@ -192,8 +198,10 @@
 			files = (
 				276197EB273CAA870052DC4F /* sound-rise.mp3 in Resources */,
 				276197EA273CAA870052DC4F /* sound-ding.mp3 in Resources */,
+				276197F6273CFC270052DC4F /* NoteImages in Resources */,
 				276197E9273CAA870052DC4F /* sound-tap.mp3 in Resources */,
 				276197DB273CA4FD0052DC4F /* Preview Assets.xcassets in Resources */,
+				276197F4273CFB490052DC4F /* notes.md in Resources */,
 				276197D8273CA4FD0052DC4F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

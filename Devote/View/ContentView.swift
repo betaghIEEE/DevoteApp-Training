@@ -27,19 +27,19 @@ struct ContentView: View {
                     }
                 }
                 .onDelete(perform: deleteItems)
-            }
+            }  //: List
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .navigationBarLeading) {
                     EditButton()
                 }
-                ToolbarItem {
+                ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: addItem) {
                         Label("Add Item", systemImage: "plus")
                     }
                 }
-            }
+            }  //: TOOLBAR
             Text("Select an item")
-        }
+        } //: NAVIGATIONVIEW
     }
 
     private func addItem() {
