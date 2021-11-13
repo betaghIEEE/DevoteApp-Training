@@ -18,6 +18,8 @@
 		276197EB273CAA870052DC4F /* sound-rise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 276197E8273CAA870052DC4F /* sound-rise.mp3 */; };
 		276197F4273CFB490052DC4F /* notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 276197F3273CFB490052DC4F /* notes.md */; };
 		276197F6273CFC270052DC4F /* NoteImages in Resources */ = {isa = PBXBuildFile; fileRef = 276197F5273CFC270052DC4F /* NoteImages */; };
+		276197FC273F07CB0052DC4F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276197FB273F07CB0052DC4F /* Constant.swift */; };
+		276197FE273F50410052DC4F /* HideKeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276197FD273F50410052DC4F /* HideKeyboardExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		276197F2273CACDD0052DC4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		276197F3273CFB490052DC4F /* notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = notes.md; path = Devote/notes.md; sourceTree = SOURCE_ROOT; };
 		276197F5273CFC270052DC4F /* NoteImages */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = NoteImages; path = Devote/NoteImages; sourceTree = SOURCE_ROOT; };
+		276197FB273F07CB0052DC4F /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		276197FD273F50410052DC4F /* HideKeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboardExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 		276197EE273CAB300052DC4F /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				276197FD273F50410052DC4F /* HideKeyboardExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 		276197EF273CAB390052DC4F /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				276197FB273F07CB0052DC4F /* Constant.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -215,6 +221,8 @@
 			files = (
 				276197DD273CA4FD0052DC4F /* Persistence.swift in Sources */,
 				276197D6273CA4FA0052DC4F /* ContentView.swift in Sources */,
+				276197FE273F50410052DC4F /* HideKeyboardExtension.swift in Sources */,
+				276197FC273F07CB0052DC4F /* Constant.swift in Sources */,
 				276197E0273CA4FD0052DC4F /* Devote.xcdatamodeld in Sources */,
 				276197D4273CA4FA0052DC4F /* DevoteApp.swift in Sources */,
 			);

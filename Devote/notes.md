@@ -77,6 +77,7 @@ We take a look at:
  
  Remember your model for an ORM Stack (dissertation)
  
+ ## Class Generation
  Working with Core Data entails working with the classes for relational entities.  The class code generation can occur in the following manners:
  1. Manual
  2. Class Definition
@@ -90,3 +91,98 @@ We take a look at:
  
  Observe how the generated classes are created.  Observe during the commit of this project to the GIT repo. 
    
+I did the subclassing shown in part 2. I  discovered that the Xcode code generator produces error filled code.  Maybe, this is a feature?  Maybe, we need to fix this connection between Obj-C and Swift.  After all, we want the ability to apply business logic in Apple's flagship data persistence tool.   It worked great in 2005 at WWDC and I could use it then for some helpful apps.  I hope to use it now that Swift Objects is WebObjects 6. 
+
+## Persistence Controller 
+
+Now, the lesson has shifted to the Persistance Controller.   Xcode does generate a defacto module for Core Data that we store in the Model group.  This is the Persistance module and Xcode generates a structure for this implementation.  It may help to look up old Objective C and Java WebObjects code to see how this module is generated there.  I believe that each produce a special class to manage the persistance controller.  That class I believe is a subclass of the big persistance controller.
+
+The structure made for the Persistance Controller is literally named that.  I have no idea if this has a parent, but structs tend not to have the parent structure classes do.   Also, some singleton patterns show up in defining accessors for shared and preview.  The structure also contains a property for the persistance contrainer. 
+The instructor recommends removing the generated comments in the Preview and initializer for this structure.  This structure and its singleton share sets up the three basic parts of the ORM model, context, and store coordinator. 
+
+Using the persistent container is the preferred way to initialize our core data stack and load our core data model later.
+
+Remember the storage mechanism typical for Core Data.  It is possible to generate a persistence store cooridinator and modules for using persistence stores other than these defacto types.  
+
+The preview method provides a singleton / class method initialize an in-memory store persistance store coordinator.  This method loads items in the store.  One can make similar methods to load such a store from plist or JSON backups.  The premise in these cases is that we load the files and perruse through loading as we go.  This method is helpful if we are transfering data from one data store to another.  
+
+Also, I look forward to reviewing my work on making whole persistent store frameworks for integrating RDBMS as the persistence stores.  This is handy if we are deploying a cloud based app to enable sharing and distributed operations. 
+
+## Managed Object Context
+Part 2
+Time index 19:55 
+
+Here we use DevoteApp as the main entry structure into our application.  The "DevoteApp" structure has a @main directive right before the structure declaration.  It also has the member constant persistenceController declared and initialized with a shared persistence store.  This item itself is constant as it only needs to point to the mechanisms providing "Core Data" access.  
+What does the .environment directive do in Swift?   An environment is a property wrapper that reads a value from the view's environment.  
+
+For example, the Devote app provides a body member that provides a getter.  This getter opens a closure for WindowGroup that initializes a ContainerView with the environment property wrapper.
+This .environment wrapper therefore makes these "variables" fairly global to the application and enforces that we access them in this way.  When this variable changes anywhere within the app, these wrappers ensure that view that depend on them also update.
+Therefore, with this single line of code in DevoteApp.body, the managed context is injected for the Core Data contained in the whole swiftUP app hierarchy, and it's all child views.  
+
+## So what are the prerequists that we covered?
+
+    *   We get a Core Data Model and Object Graph Editor.
+    *   Setting up the Persistent Container a
+    *   Managed Object Context in the Environment 
+    
+## Fetch Request :  The big piece of USING Core Data
+
+Notice in Content View, there is a "@FetchRequest" directive.    What does this "@FetchRequest" do with Core Data?
+A quick Google search responds with the following:
+    SwiftUI gives us a dedicated property wrapper for working with Core Data fetch requests, and it allows us to embed data directly into SwiftUI views without having to write extra logic.
+The Hacking with Swift (https://www.hackingwithswift.com ) provides some useful details about this wrapper.  
+The Apple Developer Documentation found at (https://developer.apple.com/documentation/swiftui/fetchrequest) says this is a property wrapper that declares a Fetched Result property that provides a collection of Core Data managed objects to a SwiftUI view.  Note: this is similar to Fetch Request class / generator pattern in Objective-C Cocoa. 
+Apple recommends keeping fetch requests as a private member of classes and structures.  This prevents initializers from accidently setting such values.  For most other members, the compiler sets up values for the initializers to cover all basis.  The making of this member private prevents this.
+
+So in Content View, there is a private variable "items" of type "FetchedResults<Item>".  It kind of reminds me of STL types in C++.   But, this mechanism with the "@FetchRequest" sets up a plist structure formed by querying the Core Data persistence store.  The "items"  variable is then used in the body with a For each closure.  Each item in items is used to make a table cell.  For example, a Navigation link is made hodling "Item at " with a label filled with formatted timestamp.  
+
+Time stamp 21:00 in Part 2 of Udemmy's "Devote App" exxample
+
+Apple provides a default set of code on making a "Core Data" app.  This provides a working skelton with the before mentioned Content View body.  In addition, Apple includes methods in the Content view for adding and deleting items.  These actions respond to the add button, and specific elements selected via the edit button. 
+The instructor recommends that we clean up Apple's example code in order to better understand it.
+The comment in the "Add" method catch recommends replacing the implementation with code to handle the error "more appropriately."  The fatal error call causes the application to generate a crash log and terminate.    Apple recommends not using such a call in shipping application.  The "delete" method has a similar set of comments.
+
+The "@Environment(\.managedObjectContext) private var viewContext" injects a managed object context (an environment where we can manipulate Core Data objects entirely in RAM).  This property acts as a scratch pad to retrieve, update, and store objects. 
+
+At time index 22:05 the instruct goes over again the fetch request.
+The "@FetchRequest" provides a property with a sort descriptor.  This sort descriptor is represented by a plist array.  In this case, it is a single item array and the item is a sort descriptor initialized with "\Item.timestamp" and ascending set to true.
+
+A Fetch Request property wrapper can potentially have four parameters such as:
+    1.  Entity
+    2.  Sort descriptor
+    3.  Predicate
+    4.  Animation
+    
+In this case, we have the sort descriptor and animation.  If we have an entity, this is a declaration of the "entities" we want to query.  Sort descriptors determine order.  Predicates determine filters on the data.  Animations determine visual actions consequence of change the results? 
+
+The instructor has us mark a section for the functions in between the member properties and the body.  This has a distinct structure reminiscent to Pascal (aka variables, functions, and main execution body).
+
+Also, the instructor recommends moving the Date Formator to a utility module.  The instructor calls this file "constant" for things like Data formatters.  But, the instructor may use this for other global  constants and functions.  This means that this constant can't be private. 
+The UI and UX segments the instructor makes for the "Constant" module gives an indicator.  We should expect other UI and UX items to show up as constant items, closures and functions.
+
+## Conclusion to Core Data Intro and Understanding XCode's Core Data template.
+First we created a Core Data container for once the app starts.  
+The Core Data Stack provides a foundation containers and how Core Data provides persistent stores.
+### The Core Data Framework:
+We can use  Core Data to save the applications' permanent data for offline use, to cache temporary data, and to add the undo and redo functionalities to our app on a single device. 
+We inject the MOC into the app.
+
+Recall the use cases.
+
+There is a code generation to make classes where we can build business logic for our managed data. 
+
+# The big example here:  A Fully Functional To Do List application
+This kind of app is kind of typical for introducing Core Data.  Believe or not, I can remember Aaron Hilligaus giving us a lesson on Core Data in student Sunday part of WWDC 2005.  This was actually a pretty nice introduction and what little did I know.  Aaron was showing us what Apple had introduced with OSX Tiger (10.4).  Up until this point, 
+    0.  Cheetah
+    1.  Puma
+    2.  Jaguar
+    3.  Panther
+    4.  Tiger
+    
+    These big cat releases provided what I called the working UNIX out of the box.  These OSX releases had toy like appeal as anyone with a decent education in the computer sciences could figure these out.   Realistically, most anyone else could, too.  These were vast improvements over macOS 9 that did not offer intuitive connection to system operation.  Well, maybe if that is what you grew up with.  With the first big cats of OSX, I could then figure out macOS 8 and 9.  Development for OSX was simple UNIX and the "MAKE" paradigm worked straight out of the box.
+    Now, we had Core Data and I learned about application loops and garbage collection.
+    
+    Now, we can build a Core Data application like a To Do List, and it is different in Swift.  But, it is made for people who can't go back in time and be raised in Gen X. 
+    With just a few lines of code, Core Data gives Swift the ability to fashion a straight forward app of this kind.  
+    
+ 
