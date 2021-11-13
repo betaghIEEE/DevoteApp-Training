@@ -234,3 +234,5 @@ Otherwise, test the application against the simulator or real hardware.
 # Create a New Entry Form for The Task Item
 
 
+The instructor says that this an exciting lesson.  The lessons includes practical and app building techniques.
+The new demo does not have a text view like the last commit.  The new demo hides the textfield and save button from the device screen.  Question, can we make such a button for making a new entry switch between "add" to new entry textfields and save buttons?  Let us see what the instructor has in mind.
