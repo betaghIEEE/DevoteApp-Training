@@ -103,15 +103,23 @@ struct ContentView: View {
                             }
                             .onDelete(perform: deleteItems)
                         }   //: List
+                        .listStyle(InsetGroupedListStyle())
+                        .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.3), radius: 12)
+                        .padding(.vertical, 0 )
+                        .frame(maxWidth: 640)
                 } //:   VSTACK
             }//: ZStack
+            .onAppear(){
+                UITableView.appearance().backgroundColor = UIColor.clear
+            }
             .navigationBarTitle("Daily Tasks", displayMode:.large )
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
                 }
             }//: TOOLBAR
-            Text("Select an item")
+            .background(backgroundGradient.ignoresSafeArea(.all))
+            
         } //: NAVIGATIONVIEW
         .navigationViewStyle(StackNavigationViewStyle())
     }

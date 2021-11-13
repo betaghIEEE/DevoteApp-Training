@@ -46,7 +46,7 @@ This Xcode 12's new Core Data template comes with the SwiftUI app life cycle int
 ![App appearance toggle (Light and Dark mode)](file://./Devote//NoteImages/AppAppearanceToggle.jpeg)
 
 ![Launch Screen](file://./Devote/NoteImages/LaunchScreen.jpeg)
-
+Image("LaunchScreen.jpeg")
 
 # What is Core Data
 Apple's Native Persistent Storage is Core Data.  This type of persistent storage is also known as an Object-Relational Machine/ Model.  
@@ -186,3 +186,28 @@ This kind of app is kind of typical for introducing Core Data.  Believe or not, 
     With just a few lines of code, Core Data gives Swift the ability to fashion a straight forward app of this kind.  
     
  
+# Begin App Refinement
+Begin part 4 of the "Devote App" example
+
+In this particular lesson, the instructor lays out the foundation of the layout and design.  This applies mostly to the appearance.  There are a few bullet points here:
+    *   Linear Gradient: 1st background
+    *   Image:  2nd background
+    *   ZStack:     Main container
+    *   Inset grouped:  List style
+    
+Let the coding begin in the Content View.
+
+Oh, this is a good time to learn how to do that code snippet for MARK comments.
+The key to this is the little completion segment in the snippets tool kit, in particular for each snippet.
+
+
+## Introduce iPad Support
+We add a modifier to the navigation view and to the following: 
+    * The ".navigationViewStyle(StackNavigationViewStyle)" at the end of the Navigation View closure.
+    *   Adjust the background
+    
+## Background 
+We add a new background to this view, since we will use this specific gradient.
+Therefore, it's worth creating a reasonable property for that purpose.  The constant module is a good place to place such a gradient reference.
+
+
