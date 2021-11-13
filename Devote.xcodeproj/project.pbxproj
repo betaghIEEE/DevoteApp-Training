@@ -20,6 +20,7 @@
 		276197F6273CFC270052DC4F /* NoteImages in Resources */ = {isa = PBXBuildFile; fileRef = 276197F5273CFC270052DC4F /* NoteImages */; };
 		276197FC273F07CB0052DC4F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276197FB273F07CB0052DC4F /* Constant.swift */; };
 		276197FE273F50410052DC4F /* HideKeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276197FD273F50410052DC4F /* HideKeyboardExtension.swift */; };
+		27619800273F7EBD0052DC4F /* BackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276197FF273F7EBD0052DC4F /* BackgroundImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		276197F5273CFC270052DC4F /* NoteImages */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = NoteImages; path = Devote/NoteImages; sourceTree = SOURCE_ROOT; };
 		276197FB273F07CB0052DC4F /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		276197FD273F50410052DC4F /* HideKeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboardExtension.swift; sourceTree = "<group>"; };
+		276197FF273F7EBD0052DC4F /* BackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				276197D5273CA4FA0052DC4F /* ContentView.swift */,
+				276197FF273F7EBD0052DC4F /* BackgroundImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				276197DD273CA4FD0052DC4F /* Persistence.swift in Sources */,
+				27619800273F7EBD0052DC4F /* BackgroundImageView.swift in Sources */,
 				276197D6273CA4FA0052DC4F /* ContentView.swift in Sources */,
 				276197FE273F50410052DC4F /* HideKeyboardExtension.swift in Sources */,
 				276197FC273F07CB0052DC4F /* Constant.swift in Sources */,

@@ -210,4 +210,27 @@ We add a modifier to the navigation view and to the following:
 We add a new background to this view, since we will use this specific gradient.
 Therefore, it's worth creating a reasonable property for that purpose.  The constant module is a good place to place such a gradient reference.
 
+By default, iOS imposes vertical padding.  This specification on the list maximizes the list on iPad devices.
+
+
+##  Background Image
+
+The last task in this lesson is to add a background image on top of this linear gradient background. 
+How do we do it?  We need to create a reusuable Swift view with a single image in it.
+This means a new View protocol following module.
+
+Here we create a new file from the SwiftUI View template that we call the BackgroundImageView.
+The instructor recommends we pay attention to the fill view modifier, it makes sure that the image will scale to fill its parent's view no matter what, while maintaining its aspect ratio so it won't be distorted. 
+There is also cause to follow the the antialias modifier.  
+
+Last but not least, we adjust the content view structure.  Here we work on modifying the toolbar and background.
+
+## So we have the stellar app basic appearance
+There is supposedly a Debug Preview mode for the canvas.  This supposedly gives us the ability to work with the persistent store in memory from the canvas.
+
+Otherwise, test the application against the simulator or real hardware.    
+
+
+# Create a New Entry Form for The Task Item
+
 

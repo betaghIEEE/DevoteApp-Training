@@ -118,6 +118,7 @@ struct ContentView: View {
                     EditButton()
                 }
             }//: TOOLBAR
+            .background(BackgroundImageView())
             .background(backgroundGradient.ignoresSafeArea(.all))
             
         } //: NAVIGATIONVIEW
@@ -128,6 +129,8 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        Group {
+            ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext).previewInterfaceOrientation(.portrait)
+        }
     }
 }
