@@ -61,48 +61,50 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            VStack {
-                VStack(spacing: 16)  {
-                    TextField("New Task", text: $task)
-                        .padding()
-                        .background(
-                            Color(UIColor.systemGray6)
-                        )
-                        .cornerRadius(10)
+            ZStack {
+                VStack {
+                    VStack(spacing: 16)  {
+                        TextField("New Task", text: $task)
+                            .padding()
+                            .background(
+                                Color(UIColor.systemGray6)
+                            )
+                            .cornerRadius(10)
+                            
                         
+                        Button(action: {
+                            addItem()
+                        }, label: {
+                            Spacer()
+                            Text("SAVE")
+                            Spacer()
+                        })
+                            .disabled(isButtonDisabled)
+                            .padding()
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .background(isButtonDisabled ? Color.gray : Color.pink)
+                            .cornerRadius(10)
+                        
+                    }   //: VSTACK
+                    .padding()
                     
-                    Button(action: {
-                        addItem()
-                    }, label: {
-                        Spacer()
-                        Text("SAVE")
-                        Spacer()
-                    })
-                        .disabled(isButtonDisabled)
-                        .padding()
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .background(isButtonDisabled ? Color.gray : Color.pink)
-                        .cornerRadius(10)
-                    
-                }   //: VSTACK
-                .padding()
-                
-                    List {
-                        ForEach(items) { item in
-                            VStack(alignment: .leading) {
-                                Text(item.task ?? "")
-                                    .font(.headline)
-                                    .fontWeight(.bold)
-                                
-                                Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                                    .font(.footnote)
-                                    .foregroundColor(.gray)
-                            }   //:     LIST ITEM
-                        }
-                        .onDelete(perform: deleteItems)
-                    }   //: List
-            } //:   VSTACK
+                        List {
+                            ForEach(items) { item in
+                                VStack(alignment: .leading) {
+                                    Text(item.task ?? "")
+                                        .font(.headline)
+                                        .fontWeight(.bold)
+                                    
+                                    Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                                        .font(.footnote)
+                                        .foregroundColor(.gray)
+                                }   //:     LIST ITEM
+                            }
+                            .onDelete(perform: deleteItems)
+                        }   //: List
+                } //:   VSTACK
+            }//: ZStack
             .navigationBarTitle("Daily Tasks", displayMode:.large )
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -111,11 +113,10 @@ struct ContentView: View {
             }//: TOOLBAR
             Text("Select an item")
         } //: NAVIGATIONVIEW
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 
 }
-
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
