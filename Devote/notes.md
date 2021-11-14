@@ -255,4 +255,10 @@ We break the code, kind of on purpose, to make a better view to use with Core Da
     1.  Missing context
     2.  Missing "task" (well, I saw that fix coming)
     3.  Missing view context - Does the view context also carry the MOC and therefore the connection to the Core Data stack?
-    
+So what is next to give this view the desired look?  
+
+## Adding/ Polishing The Details
+Here we add details to Text field and button's vertical stack.   These improvements deal with color and general shape of the "view" we are using to add a new "task."
+Time Index: 6:15
+
+Commit at time index 7:10
