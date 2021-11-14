@@ -262,3 +262,15 @@ Here we add details to Text field and button's vertical stack.   These improveme
 Time Index: 6:15
 
 Commit at time index 7:10
+
+## Layout Updates
+This is where we put this new item view into the content view.
+
+We make marked sections within the body of the context view to aid us.  We need to know where features go such as:
+    1.  Header
+    2.  New Task button
+    3.  Tasks
+    4.  New task item
+
+So, we add a spacer in the "header" section so the "design" of this view can breathe.
+We commit at 8:52 in the video so we can see the results so far.

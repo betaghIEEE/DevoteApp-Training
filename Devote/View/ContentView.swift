@@ -43,7 +43,16 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack {
+                //  MARK:   - Main View
                 VStack {
+                    //  MARK:   - HEADER
+                    
+                    Spacer(minLength: 80)
+                    
+                    
+                    //  MARK:   - New Task Button
+                    
+                    //  MARK:   - TASKS
                     
                         List {
                             ForEach(items) { item in
@@ -64,6 +73,8 @@ struct ContentView: View {
                         .padding(.vertical, 0 )
                         .frame(maxWidth: 640)
                 } //:   VSTACK
+                
+                //  MARK:   - New Task Item
             }//: ZStack
             .onAppear(){
                 UITableView.appearance().backgroundColor = UIColor.clear
