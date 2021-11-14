@@ -16,6 +16,8 @@ struct ContentView: View {
         task.isEmpty
     }
     
+    @State private var showNewTaskItem : Bool = false
+    
     // FETCHING DATA
     @Environment(\.managedObjectContext) private var viewContext
 
@@ -52,6 +54,25 @@ struct ContentView: View {
                     
                     //  MARK:   - New Task Button
                     
+                    Button(action: {
+                        showNewTaskItem = true
+                        
+                        }, label: {
+                            Image(systemName: "plus.circle")
+                                .font(.system(size: 30, weight: .semibold, design: .rounded))
+                            Text("New Task")
+                                .font(.system(size: 24, weight: .bold, design: .rounded))
+                    })  //: New Task Button
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 20)
+                        .padding(.vertical)
+                        .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .leading, endPoint: .trailing)
+                                        .clipShape(Capsule())
+                        )
+                        .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.25), radius: 8, x: 0.0, y: 4.0)
+                    
+                    
+                    
                     //  MARK:   - TASKS
                     
                         List {
@@ -75,6 +96,10 @@ struct ContentView: View {
                 } //:   VSTACK
                 
                 //  MARK:   - New Task Item
+                if showNewTaskItem {
+                    NewTaskItemView()
+                }
+                
             }//: ZStack
             .onAppear(){
                 UITableView.appearance().backgroundColor = UIColor.clear

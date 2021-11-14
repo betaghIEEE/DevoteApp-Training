@@ -274,3 +274,12 @@ We make marked sections within the body of the context view to aid us.  We need 
 
 So, we add a spacer in the "header" section so the "design" of this view can breathe.
 We commit at 8:52 in the video so we can see the results so far.
+
+## Custom Button
+We do a lot of work up to time index 11:32  There are few gotchas to watch out for.
+
+When we test this prototype, we see that the button does bring up the NewTaskItem view on top of the list.  However, we can not dismiss this view, no matter what we do.  
+
+## Blank Layer
+Time index 12:02 
+
