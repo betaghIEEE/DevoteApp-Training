@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2756276027408C150077221D /* NewTaskItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2756275F27408C150077221D /* NewTaskItemView.swift */; };
 		276197D4273CA4FA0052DC4F /* DevoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276197D3273CA4FA0052DC4F /* DevoteApp.swift */; };
 		276197D6273CA4FA0052DC4F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276197D5273CA4FA0052DC4F /* ContentView.swift */; };
 		276197D8273CA4FD0052DC4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 276197D7273CA4FD0052DC4F /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2756275F27408C150077221D /* NewTaskItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskItemView.swift; sourceTree = "<group>"; };
 		276197D0273CA4FA0052DC4F /* Devote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Devote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		276197D3273CA4FA0052DC4F /* DevoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevoteApp.swift; sourceTree = "<group>"; };
 		276197D5273CA4FA0052DC4F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			children = (
 				276197D5273CA4FA0052DC4F /* ContentView.swift */,
 				276197FF273F7EBD0052DC4F /* BackgroundImageView.swift */,
+				2756275F27408C150077221D /* NewTaskItemView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				276197FC273F07CB0052DC4F /* Constant.swift in Sources */,
 				276197E0273CA4FD0052DC4F /* Devote.xcdatamodeld in Sources */,
 				276197D4273CA4FA0052DC4F /* DevoteApp.swift in Sources */,
+				2756276027408C150077221D /* NewTaskItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

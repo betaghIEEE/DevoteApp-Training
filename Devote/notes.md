@@ -236,3 +236,17 @@ Otherwise, test the application against the simulator or real hardware.
 
 The instructor says that this an exciting lesson.  The lessons includes practical and app building techniques.
 The new demo does not have a text view like the last commit.  The new demo hides the textfield and save button from the device screen.  Question, can we make such a button for making a new entry switch between "add" to new entry textfields and save buttons?  Let us see what the instructor has in mind.
+The instructor shows the following features in the demo:
+    *   New Task button
+    *   Entry Form: New Task Item View
+    *   Blank view: Transparent background
+    
+Thus we replace the entry view of the previous prototype with a new add task button on the top area.  When we tap the add button, a new full screen view shows up with the previously example's Entry form.    These new features include the following:
+
+    *   Automatic Keyboard Avoidance
+        **  SwiftUI pushes up the text field automatically
+        **  No extra action required for developers
+    *   The app's layout gets more complex with multiple layers, but the straight forward utility makes it worth while.
+    *   We need a new Swift UI module for the new task form.  "NewTaskItemView.swift"
+
+We break the code, kind of on purpose, to make a better view to use with Core Data.   We commit this to the GIT repository to mark where we break the code and how we fix it.
