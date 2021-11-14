@@ -18,6 +18,8 @@ struct ContentView: View {
     
     @State private var showNewTaskItem : Bool = false
     
+    @AppStorage("isDarkMode") private var isDarkMode: Bool  = false
+    
     // FETCHING DATA
     @Environment(\.managedObjectContext) private var viewContext
 
@@ -48,6 +50,44 @@ struct ContentView: View {
                 //  MARK:   - Main View
                 VStack {
                     //  MARK:   - HEADER
+                    
+                    HStack(spacing: 10) {
+                        
+                        //  TITLE "Daily Tasks"
+                        Text("Devote")
+                            .font(.system(.largeTitle, design: .rounded))
+                            .fontWeight(.heavy)
+                            .padding(.leading, 4)
+                        
+                        Spacer()
+                        
+                        //  EDIT BUTTON
+                        EditButton()
+                            .font(.system(size: 16, weight: .semibold, design: .rounded))
+                            .padding(.horizontal, 10)
+                            .frame(minWidth: 70, minHeight: 24)
+                            .background(
+                                Capsule().stroke(Color.white, lineWidth: 2 )
+                            )
+                        
+                        //  APPEARANCE
+                        
+                        Button(
+                            action:{
+                                // Flip flop dark-light mode
+                                isDarkMode.toggle()
+                                
+                            }, label: {
+                                Image(systemName: isDarkMode ? "moon.circle.fill" : "moon.circle" )
+                                    .resizable()
+                                    .frame(width: 24, height: 24)
+                                    .font(.system(.title, design: .rounded))
+                            }
+                        )
+                        
+                    } //:   HSTACK
+                    .padding()
+                    .foregroundColor(.white)
                     
                     Spacer(minLength: 80)
                     
@@ -111,11 +151,7 @@ struct ContentView: View {
                 UITableView.appearance().backgroundColor = UIColor.clear
             }
             .navigationBarTitle("Daily Tasks", displayMode:.large )
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-            }//: TOOLBAR
+            .navigationBarHidden(true)
             .background(BackgroundImageView())
             .background(backgroundGradient.ignoresSafeArea(.all))
             
