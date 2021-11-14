@@ -301,3 +301,14 @@ Here we add a binding for "isShowing".  This binding is turned false when the ad
 
 # Chapter 6 - Let's Develop a Custom Header
 
+Features of this chapter are as follows:
+    *   New Header - Custom Style and buttons
+    *   Preferred Color Scheme - Automatic Switch
+    *   Appearance - Light and Dark
+    *   Custom Component - Manual Switch between Light and Dark (the moon icon in the header)
+    
+
+    
+
+
+
