@@ -16,6 +16,8 @@ struct NewTaskItemView: View {
         task.isEmpty
     }
     
+    @Binding var isShowing: Bool
+    
     
     // FETCHING DATA
     @Environment(\.managedObjectContext) private var viewContext
@@ -40,6 +42,7 @@ struct NewTaskItemView: View {
             
             task = ""
             hideKeyboard()
+            isShowing = false
         }
     }
     
@@ -89,7 +92,7 @@ struct NewTaskItemView: View {
 
 struct NewTaskItemView_Previews: PreviewProvider {
     static var previews: some View {
-        NewTaskItemView()
+        NewTaskItemView(isShowing: .constant(true))
             .previewDevice("iPhone 12 Pro")
             .background(Color.gray.edgesIgnoringSafeArea(.all))
     }

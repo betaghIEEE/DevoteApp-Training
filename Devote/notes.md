@@ -282,4 +282,22 @@ When we test this prototype, we see that the button does bring up the NewTaskIte
 
 ## Blank Layer
 Time index 12:02 
+We create a "blank view" to provide an or condition that we can reach.
+We add this blank view to the conditional for the show new task item to help dismiss the New Task Item View.  This demo occurs at Time index 14:00
+
+Yet, what is supposed to happen if the user "adds" an item/task?
+
+## Dismiss With Binding
+
+Here we add a binding for "isShowing".  This binding is turned false when the addItem is called.  It is turned to true in the preview with :
+    "NewTaskItemView(isShowing: .constant(true))"
+    Futhermore, the call is changed in Content view to 
+    NewTaskItemView(isShowing: $showNewTaskItem)
+    
+    * This code fix links the show New Task Item condition to the NewTaskItem View.
+    *   It also makes it possible to "add" a task and then dismiss the New Task Item View.
+    
+## Test the New Task View with Binding
+
+# Chapter 6 - Let's Develop a Custom Header
 
