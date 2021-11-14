@@ -17,6 +17,9 @@ struct NewTaskItemView: View {
     }
     
     
+    // FETCHING DATA
+    @Environment(\.managedObjectContext) private var viewContext
+    
     
     //  MARK: Functions
     

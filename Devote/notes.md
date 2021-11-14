@@ -248,5 +248,11 @@ Thus we replace the entry view of the previous prototype with a new add task but
         **  No extra action required for developers
     *   The app's layout gets more complex with multiple layers, but the straight forward utility makes it worth while.
     *   We need a new Swift UI module for the new task form.  "NewTaskItemView.swift"
-
+## Breaking Code - Fix it
+Time Index 2:45 (Lesson 5)
 We break the code, kind of on purpose, to make a better view to use with Core Data.   We commit this to the GIT repository to mark where we break the code and how we fix it.
+
+    1.  Missing context
+    2.  Missing "task" (well, I saw that fix coming)
+    3.  Missing view context - Does the view context also carry the MOC and therefore the connection to the Core Data stack?
+    
