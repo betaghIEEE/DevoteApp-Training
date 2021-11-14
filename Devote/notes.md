@@ -354,3 +354,31 @@ Each of these selections are handled by the ternary operator.  This is as good a
 
 # Chapter 7 - Improve the design of the task item
 
+We introduce the task item - custom component to include some kind of completion.  This is in the entity and we just provide a way for this to be edited in the list. 
+    *   Task Item   - Custom Component
+    *   Checkbox    - Toggle Style
+    *    
+
+We will also learn how to customize the look and feel of a SwiftUI toggle.
+
+We can also customize the toggle style (checkbox).
+
+The instructor gave a hint that we are going old school on app development.  What does this mean?  
+To be fair, NeXT had Interface Builder and the iPad introduction brought with it Storyboard.   
+
+Core Data enables the Create, Read, Update, and Delete (CRUD) design pattern.  The CRUD design pattern simplifies many of the database operations, especially outside the search mechanisms.
+For this ListRowItemView, we need to create a toggle element and inside it we will insert. 
+This also uses the publish - subscribe/action pattern.
+The pattern operates with the following:
+    *   Publisher   - Parameter
+    *   Action      - Parameter
+Notice the toggle onRecieve listener / action listens for an object will change from item.  If such a condition is triggered, then this closure tries to save the view context.  In other words, this listener responds with a publish action. 
+Now is a good time to commit to the repository as we are about to change the Content View. 
+
+
+# Chapter 8 - Learn How to Create a Custom Visual Effect in SwiftUI
+
+# Chapter 9 - Dealing with UX and Sound Design
+
+#  Chapter 10 - Introduction to the new Widget API
+
