@@ -10,6 +10,7 @@
 		2756276027408C150077221D /* NewTaskItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2756275F27408C150077221D /* NewTaskItemView.swift */; };
 		2756276227409DB00077221D /* BlankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2756276127409DB00077221D /* BlankView.swift */; };
 		275627642741CDAC0077221D /* ListRowItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275627632741CDAC0077221D /* ListRowItemView.swift */; };
+		275627662741DBB90077221D /* CheckboxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275627652741DBB90077221D /* CheckboxStyle.swift */; };
 		276197D4273CA4FA0052DC4F /* DevoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276197D3273CA4FA0052DC4F /* DevoteApp.swift */; };
 		276197D6273CA4FA0052DC4F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276197D5273CA4FA0052DC4F /* ContentView.swift */; };
 		276197D8273CA4FD0052DC4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 276197D7273CA4FD0052DC4F /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		2756275F27408C150077221D /* NewTaskItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskItemView.swift; sourceTree = "<group>"; };
 		2756276127409DB00077221D /* BlankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankView.swift; sourceTree = "<group>"; };
 		275627632741CDAC0077221D /* ListRowItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowItemView.swift; sourceTree = "<group>"; };
+		275627652741DBB90077221D /* CheckboxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxStyle.swift; sourceTree = "<group>"; };
 		276197D0273CA4FA0052DC4F /* Devote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Devote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		276197D3273CA4FA0052DC4F /* DevoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevoteApp.swift; sourceTree = "<group>"; };
 		276197D5273CA4FA0052DC4F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 		276197F0273CAB730052DC4F /* Style */ = {
 			isa = PBXGroup;
 			children = (
+				275627652741DBB90077221D /* CheckboxStyle.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				275627642741CDAC0077221D /* ListRowItemView.swift in Sources */,
 				276197E0273CA4FD0052DC4F /* Devote.xcdatamodeld in Sources */,
 				276197D4273CA4FA0052DC4F /* DevoteApp.swift in Sources */,
+				275627662741DBB90077221D /* CheckboxStyle.swift in Sources */,
 				2756276027408C150077221D /* NewTaskItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -114,7 +114,12 @@ struct ContentView: View {
                     
                     
                     //  MARK:   - TASKS
-                    
+                    List {
+                        ForEach(items) { item in
+                            ListRowItemView(item: item)
+                        }
+                    }
+                    /*
                         List {
                             ForEach(items) { item in
                                 VStack(alignment: .leading) {
@@ -129,6 +134,7 @@ struct ContentView: View {
                             }
                             .onDelete(perform: deleteItems)
                         }   //: List
+                     */
                         .listStyle(InsetGroupedListStyle())
                         .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.3), radius: 12)
                         .padding(.vertical, 0 )

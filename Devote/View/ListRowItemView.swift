@@ -23,8 +23,10 @@ struct ListRowItemView: View {
                 .font(.system(.title2, design: .rounded))
                 .foregroundColor (item.completion ? Color.pink : Color.primary )
                 .padding(.vertical, 12)
-                .animation(.default)
+                .animation(.default )
+                
         } //: TOGGLE
+        .toggleStyle(CheckboxStyle())
         .onReceive(item.objectWillChange, perform:{
             try? self.viewContext.save()
         })
@@ -33,7 +35,10 @@ struct ListRowItemView: View {
 }
 
 struct ListRowItemView_Previews: PreviewProvider {
+    
+  
+    
     static var previews: some View {
-        ListRowItemView()
+        ListRowItemView(item: testItem)
     }
 }

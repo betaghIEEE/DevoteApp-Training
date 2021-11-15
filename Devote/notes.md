@@ -375,8 +375,19 @@ The pattern operates with the following:
 Notice the toggle onRecieve listener / action listens for an object will change from item.  If such a condition is triggered, then this closure tries to save the view context.  In other words, this listener responds with a publish action. 
 Now is a good time to commit to the repository as we are about to change the Content View. 
 
+This effort involves creating a List Row Item and Checkbox Style. 
+
+Notice that we can do this with a preview for the List Row Item, but we need a constant for item.  
+
+Also notice, Xcode fusses over .animation(.default) in the Checkbox style.  What do we do?
+
 
 # Chapter 8 - Learn How to Create a Custom Visual Effect in SwiftUI
+
+This effect that we add utilizes the following:
+    1.  Blend mode  - SwiftUI Modifier
+    2.  Blur effect - SwiftUI Modifer
+
 
 # Chapter 9 - Dealing with UX and Sound Design
 
