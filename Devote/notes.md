@@ -403,6 +403,10 @@ Improve the user experience.
 Introduction shows us the gist of the app improvements with sounds and haptic feedback for 1:50.  
 
 The steps taken to accomplish this: 
+I created a new utility module called SoundPlayer.  I imported AVFoundation into this module and created a function to play some audio.
+
+We setup a well known function to play the selected sound from the local app bundle.
+
 
 
 #  Chapter 10 - Introduction to the new Widget API
