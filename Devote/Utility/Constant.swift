@@ -16,18 +16,21 @@ let itemFormatter: DateFormatter = {
     return formatter
 }()
 
+let testItem: Item = {
+    let item = Item()
+    item.id = UUID()
+    item.task = ""
+    item.completion = false
+    return item
+}()
 
 //  MARK:   -   UI
 var backgroundGradient: LinearGradient {
     return LinearGradient(gradient: Gradient(colors: [Color.pink, Color.blue]), startPoint: .topLeading, endPoint: .bottomTrailing)
 }
 
-var testItem: Item {
-    let item = Item()
-    item.id = UUID()
-    item.task = ""
-    item.completion = false 
-    return item
-}
+
 
 //  MARK:   -   UX
+
+let feedback = UINotificationFeedbackGenerator()

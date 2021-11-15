@@ -402,12 +402,25 @@ Improve the user experience.
     
 Introduction shows us the gist of the app improvements with sounds and haptic feedback for 1:50.  
 
+## Sound Effects
+
 The steps taken to accomplish this: 
 I created a new utility module called SoundPlayer.  I imported AVFoundation into this module and created a function to play some audio.
 
 We setup a well known function to play the selected sound from the local app bundle.
 
+Time index 7:28
+## Haptic Feedback
 
+This effort places some more constants and functions into the Constant module.
+
+I first clean up this module to keep the testItem under computed variables.  I also convert this item into a one time computed constant.
+
+With all this in order, I make some tools in the User Experience (UX) section that I have designated. 
+
+This UI Notification Feedback Generator comes in handy.  It can be used to generate different kinds of feedback on iPhone devices.  
+This applies in the Content View module.  Let us see how this works.  Also, I commit this now so that GIT can keep straight the changes.
+ 
 
 #  Chapter 10 - Introduction to the new Widget API
 
