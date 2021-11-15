@@ -388,8 +388,22 @@ This effect that we add utilizes the following:
     1.  Blend mode  - SwiftUI Modifier
     2.  Blur effect - SwiftUI Modifer
 
+What does this mean?  The Blank View is shown when adding a new item (in Content View).  Look in the Blank View.  We can add these features such as blend mode and blur effect to change the background picture underneath.   This gives a notion that the add task is the only action to pay attention to while it is there.  This is the majority of the lesson up until 7:00 into the lecture.
+  
+  At 7:52, we add .blur to the VSTACK end.  What does this do?
+  
+  Notice there is something to watch out for.  We need the .onDelete part to the ForEach and it is ease to undo that effort when changing to a custom Row view.
 
 # Chapter 9 - Dealing with UX and Sound Design
+
+Improve the user experience.  
+    *   Sound effects   - user experience
+    *   Haptic Feedback - user experience
+    
+Introduction shows us the gist of the app improvements with sounds and haptic feedback for 1:50.  
+
+The steps taken to accomplish this: 
+
 
 #  Chapter 10 - Introduction to the new Widget API
 
