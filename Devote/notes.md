@@ -420,7 +420,142 @@ With all this in order, I make some tools in the User Experience (UX) section th
 
 This UI Notification Feedback Generator comes in handy.  It can be used to generate different kinds of feedback on iPhone devices.  
 This applies in the Content View module.  Let us see how this works.  Also, I commit this now so that GIT can keep straight the changes.
- 
+
+## Haptic Setting
+That one more thing ...
+Time index 9:39
+
+The only real way to test this is with a real device.  This is where a real device is connected for testing purposes. 
 
 #  Chapter 10 - Introduction to the new Widget API
+
+The chapter introduces the WidgetKit framework.  This is good for providing a widget form of the app.  This widget can allow fast access and action to the apps capabilities across Apple's platforms.
+## Widget Basics
+    *   Add
+    *   Jiggle
+    *   Widget Gallery
+        1.  icon
+        2.  name
+        3.  description
+        4.  widget
+        5.  button
+    *   Adaptive Widget
+    *   Tutorial example/purpose:
+        **  Static Configuration - non-configurable widget
+        **  Intent Configuration - configurable widget
+
+## Widget Extension
+
+How do we add a new Widget target to our iOS application?  We open the File menu and navigate through New to Target.  Then, we look through the iOS templates to find the Widget Extension Target.  The odd thing, we force XCode to not include configuration intent.  Why?  Our widget does support the user configurable properties.  When would an application support such user configurable properties?  What does that mean?
+
+Also, clicking finish brings up a inquiry panel about whether we wish to activate this new extension.  By activating this new target, we enable building, debugging, and running.  Xcode says that schemas can be chosen in the toolbar or Product name.
+
+Time Index 2:00
+
+The "DevoteWidget" file provides a struct module.  In particular, this struct conforms to the TimelineProvider.  It also has a @main entry struct called DevoteWidget.  This is a kind of hello world for Widgets.  It calls out a Static Configuration and calls out the DevoteWidgetEntryView.  
+
+So, at time index 2:49 we do our first test.
+
+
+This module derives its capabilities from WidgetKit.  A widget elevates key content from an app and displays it where people can see it at a glance.  A widget's main purpose is to display a small amount of timely, personally relavent information that people can view without opening the app.
+
+Widgets were reintroduced into the macOS platforms with Panther.  One could click on the widget icon and widgets would appear on the screen.  There was a keyboard shortcut for this, too.  These widgets were made mostly from portions of web pages and could give us pieces of info at a glance.  
+Now widgets are available on:
+    *   iPhone
+    *   iPad
+    *   Macintosh
+
+The building blocks include the following:
+    1.  Family
+        *   The template a widget uses: small, medium, or large.
+        *   Widgets can support one or more sizes, giving users the flexibility to configure their widgets however they would like. 
+    2.  Timeline   
+        *   An object that specifies a date for WidgetKit to update a widget's view. 
+        *   A timeline contains an array of timeline entry objects and a refresh policy. 
+        *   Timeline types:
+            **  .atEnd
+            **  .afterDate
+            **  .never
+    3.  Entry
+        *   Each entry specifies the date we would like WidgetKit to update the widget's view and any additional information that our widget needs to render the view.
+Our responsibility is to determine when updates will be executed.
+Widgets have grown from the notion of miniapps and they really were not meant to be mini-apps.  They have limited capabilities and this is designed.  This is done on purposes to prevent overuse or abuse of the devices, energy, memory, and other crucial resources.
+
+Mark stop time at 8:54
+The Widget stack diagram includes configuration, provider, and content view.  These connect to snapshots and timeline entries.
+
+## Widget Template 
+
+The Widget Template shows that we import the WidgetKit and SwiftUI. The provider structure supplied conforms to the Timeline Provider protocol.  
+A timeline provider advises widget kit.  This is an example of why I like Cocoa's use of the Objective-C class better.  The inheritance characteristic helps by providing default implementation and therefore reducing error.  If I need to override because of my needs, then this is so.   It is not the framework provider's fault that I need some feature they did not foresee in my code.   But, I can be grateful when their work sufficiently takes care of my problems. 
+Any who, the timeline provider protocol expects a placeholder, getSnapshot, and getTimeline method functions.  Also, the protocol expects an instance/implementation of a TimelineEntry protocol structure or class.  Would a class be better in any of these cases?  So these are the key points:
+    1.  The imports include the WidgetKit and SwiftUI frameworks
+    2.  The Timeline Provider struct conforms to the same name protocol and the template names Provider.  This struct advises the widget kit when to update a widget's display.
+    3.  There are 3 required method functions for this Timeline Provider protocol:
+        a.  placeholder
+        b.  getTimeline
+        c.  getSnapshot
+    4.  Note the code in the getTimeline
+        a.  An entry array is supplied 
+        b.  a for loop generates 5 entries an hour appart.
+    5.  There is a Timeline Entry protocol based structure/class supplied.
+        a.  It exists to facilitate Widget Kit to render Widgets
+        b.  The date is the required variable in Timeline entry and aids WidgetKit in managing time based updates.
+    6.  UIKit and Cocoa were kind of left behind in the implementation of WidgetKit.  What is the idea?
+    7.  The "Devote Widget" entry view is where we create the actual layout and design for the widget.
+        a.   Notice there is only one variable declared in this View protocol following struct
+        b.  The body template only has a Text field with a date.
+    8.  The main entry point is the "Devote Widget" that is an implementation of the Widget protocol.
+        a.  The kind member variable reports a string describing the widget.
+        b.  The body returns a Widget Configuration that can be either
+            1.  Static Configuration
+                a.  Allows us to register a widget configured by the developer
+                b.  Time to time, this type updates its data.
+            2.  Intent Configuration
+                What is this?
+                a. We can use Intent configuration to provide user configurable options for our Widget
+                b. Example of such a widget is Apple's Weather widget to select current weather conditions and forecasts for a specific location.
+            3.  The call for the Static Configuration 
+                a.  sets up a Widget Configuration protocol conforming class/struct
+                b.  is used by the system to fetch widget data.
+    9.  We need a view builder closure that describes the SwiftUI view for displaying widget data.
+           
+            
+ Mark Time 11:43       
+    
+
+The Devote Widget module also contains a DevoteWidget structure that conforms to the Widget protocol.  
+
+## Widget Previews
+In the "DevoteWidget_Previews", we start to see what previews we can do.  Widgets come in small, medium, and large.  
+In the instructor's opinion, it is worth knowing how we can test these different widgets properly on the canvas. 
+Select the whole a "Devote Widget" and review with its modifier as I show you after that.
+
+Time index 13:22
+  
+We can command click on the call to DevoteWidgetEntryView and embed this view into group.  Then we can copy this view declaration and edit the family.  This will alter the WidgetPreviewContext with 2 other families: 
+    *   systemMedium
+    *   systemLarge
+This little modification gives us previews in each of the typical widget sizes.  This is a useful tidbit for doing WidgetKit modules.    
+    
+## Widget Assets.
+Regular iOS project share many similarities with Widgets.  For example, both of them have a dedicated asset catalog.   
+Please select the assets group in the project navigator to make adjustments and demonstrate capabilities.  Like the app template itself, a Widget template comes with:
+    *   Accent Color
+    *   App Icon
+    *   Widget Background
+
+
+The instructor has supplied images for both the App Icon and some "rocket small" image.  I added these to the application so that I can use them in the application, specifically the Widget.
+
+I also checked on the WidgetBackground.  This is a background color.  The color I applied is #D13A85.  This gives a nice pink color for the background of this Widget.
+
+##  Shared Assets
+It is possible for the Widget and the main application to have their own assets.  It is possible for these items to share such assets.
+
+In the Identity and Type Inspector, we can see what item is targeted for what.  If we select the logo from the Assets in "Devote", then we can see its target membership if for Devote and nothing else.  Where as we can click the check box for Xcode to make this icon target both the main app and the Widget.
+
+##  Widget Creation
+Time index 18:09
+In the rest of this lecture, we will create a static widget that will adapt to all sizes across the board.
 

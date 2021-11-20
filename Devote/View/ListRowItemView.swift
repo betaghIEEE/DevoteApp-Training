@@ -23,7 +23,7 @@ struct ListRowItemView: View {
                 .font(.system(.title2, design: .rounded))
                 .foregroundColor (item.completion ? Color.pink : Color.primary )
                 .padding(.vertical, 12)
-                .animation(.default )
+                .animation(.default, value: item  )
                 
         } //: TOGGLE
         .toggleStyle(CheckboxStyle())

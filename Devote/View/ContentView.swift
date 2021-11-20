@@ -77,6 +77,7 @@ struct ContentView: View {
                                 // Flip flop dark-light mode
                                 isDarkMode.toggle()
                                 playSound(sound: "sound-tap", type: "mp3")
+                                feedback.notificationOccurred(.success)
                                 
                             }, label: {
                                 Image(systemName: isDarkMode ? "moon.circle.fill" : "moon.circle" )
@@ -98,6 +99,7 @@ struct ContentView: View {
                     Button(action: {
                         showNewTaskItem = true
                         playSound(sound: "sound-ding", type: "mp3")
+                        feedback.notificationOccurred(.success)
                         
                         }, label: {
                             Image(systemName: "plus.circle")
@@ -145,7 +147,7 @@ struct ContentView: View {
                 } //:   VSTACK
                 .blur(radius: showNewTaskItem ? 8.0 : 0, opaque: false )
                 .transition(.move(edge: .bottom))
-                .animation(.easeOut(duration: 0.5))
+                .animation(.easeOut(duration: 0.5), value: showNewTaskItem  )
                 
                 //  MARK:   - New Task Item
                 if showNewTaskItem {
