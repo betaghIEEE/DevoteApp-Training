@@ -559,3 +559,29 @@ In the Identity and Type Inspector, we can see what item is targeted for what.  
 Time index 18:09
 In the rest of this lecture, we will create a static widget that will adapt to all sizes across the board.
 
+For example, where did this .configurationDisplayName and .description come from in the DevoteWidget module?  
+For the name, the instructor suggests changing this value to Devote Launcher.
+
+This information will be shown later in the widget editor later.  
+
+The instructor asks to navigate the cursor to the body section of the Devote Widget and review. 
+
+We comment out the Text entry in the Devote Widget Entry View.  This shall be replaced with our custom design and content.  What does that look like.  Like the following: 
+We add call to a global function targeted for the main app.  Well, we need to ensure that the constants target the Widget, too.
+
+Notice the Geometry Reader that we have added and the closure aspects to this.  Furthermore, I add precise positioning modifiers to the logo.  Don't forget to do this.
+
+This is when I notice that the instructor's preview show nice examples of the widget, I thought my canvas should show me proof that something is working, too.
+
+So, I add modifiers to this text view.  Yet, I can embed this text view into a new horizontal stack container.  What does this do?  At this point in the demo, it does nothing.  But, the instructor says it shall be used for further positioning later on in the lesson.  
+For example, we add some modifiers to the Horizontal Stack and this moves the text view down below the rocket in the image. 
+The instructor thinks that it makes for a much better app for the Widgets to be differentiated by appearance.  But how do we do this?  The design can be adaptive depending on the widget family.  
+
+## Widget Family
+Time Index 25:31
+
+We can apply a special property to the Widget module that we can use in different conditions.    
+The instructor wants us to navigate to the top of the Entry View - entry member.  There we insert the helper.  This is an environment property wrapper and the widget family key, we can get the actual size of any widget instance.   This is a powerful feature as we can use this information to select UI construction.  The instructor says that we can always use this widget family environment value to understand the current widget configuration.  
+
+This spacer added to the bottom of the HStack in Devote Widget Entry View.  Try it on the other Widget Families.  The spacer moves the Text capsule to the left (read left to right).  
+Another way to make such adjustments is to the logo.  Place in the widget and height alternate sizes for widgetFamily != .systemSmall

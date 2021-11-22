@@ -16,13 +16,6 @@ let itemFormatter: DateFormatter = {
     return formatter
 }()
 
-let testItem: Item = {
-    let item = Item()
-    item.id = UUID()
-    item.task = ""
-    item.completion = false
-    return item
-}()
 
 //  MARK:   -   UI
 var backgroundGradient: LinearGradient {

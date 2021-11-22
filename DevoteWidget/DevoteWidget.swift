@@ -40,9 +40,52 @@ struct SimpleEntry: TimelineEntry {
 
 struct DevoteWidgetEntryView : View {
     var entry: Provider.Entry
+    
+    @Environment(\.widgetFamily) var widgetFamily
 
     var body: some View {
-        Text(entry.date, style: .time)
+        //Text(entry.date, style: .time)
+        GeometryReader { geometry in
+            ZStack{
+                backgroundGradient
+                
+                Image("rocket-small")
+                    .resizable()
+                    .scaledToFit()
+                
+                Image("logo")
+                    .resizable()
+                    .frame(
+                        width: widgetFamily != .systemSmall ? 56: 36,
+                        height: widgetFamily != .systemSmall ? 56: 36)
+                    .offset(x: (geometry.size.width / 2) - 20, y: (geometry.size.height / -2) + 20)
+                    .padding(.top, widgetFamily != .systemSmall ?  32 : 12)
+                    .padding(.trailing,  widgetFamily != .systemSmall ?  32 : 12)
+                
+                HStack {
+                    Text("Just Do It")
+                        .foregroundColor(.white)
+                        .font(.system(.footnote, design: .rounded))
+                        .fontWeight(.bold)
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 4)
+                        .background(
+                            Color(red: 0, green: 0, blue: 0)
+                                .blendMode(.overlay)
+                        )
+                    .clipShape(Capsule())
+                    
+                    if widgetFamily != .systemSmall {
+                        Spacer()
+                    }
+                    
+                } //: HSTACK
+                .padding()
+                .offset( y: (geometry.size.height / 2 ) - 24 )
+                
+                
+            } //: ZStack
+        } //: Geometry Reader
     }
 }
 
@@ -54,8 +97,8 @@ struct DevoteWidget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             DevoteWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("Devote Launcher")
+        .description("This is an example widget for the personal task manager app.")
     }
 }
 

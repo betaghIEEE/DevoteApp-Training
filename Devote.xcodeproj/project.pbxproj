@@ -13,6 +13,9 @@
 		271D4E212744C1E800474099 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 271D4E202744C1E800474099 /* Assets.xcassets */; };
 		271D4E252744C1E800474099 /* DevoteWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 271D4E172744C1E700474099 /* DevoteWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		271D4E2A2748BECB00474099 /* notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 276197F3273CFB490052DC4F /* notes.md */; };
+		271D4E2B2748C2F700474099 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276197FB273F07CB0052DC4F /* Constant.swift */; };
+		271D4E2D2748C51E00474099 /* ConstantCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271D4E2C2748C51E00474099 /* ConstantCoreData.swift */; };
+		271D4E2E2748C67600474099 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 276197D7273CA4FD0052DC4F /* Assets.xcassets */; };
 		2756276027408C150077221D /* NewTaskItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2756275F27408C150077221D /* NewTaskItemView.swift */; };
 		2756276227409DB00077221D /* BlankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2756276127409DB00077221D /* BlankView.swift */; };
 		275627642741CDAC0077221D /* ListRowItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275627632741CDAC0077221D /* ListRowItemView.swift */; };
@@ -65,6 +68,7 @@
 		271D4E1E2744C1E700474099 /* DevoteWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevoteWidget.swift; sourceTree = "<group>"; };
 		271D4E202744C1E800474099 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		271D4E222744C1E800474099 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		271D4E2C2748C51E00474099 /* ConstantCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantCoreData.swift; sourceTree = "<group>"; };
 		2756275F27408C150077221D /* NewTaskItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskItemView.swift; sourceTree = "<group>"; };
 		2756276127409DB00077221D /* BlankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankView.swift; sourceTree = "<group>"; };
 		275627632741CDAC0077221D /* ListRowItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowItemView.swift; sourceTree = "<group>"; };
@@ -208,6 +212,7 @@
 			children = (
 				276197FB273F07CB0052DC4F /* Constant.swift */,
 				275627672742164B0077221D /* SoundPlayer.swift */,
+				271D4E2C2748C51E00474099 /* ConstantCoreData.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -311,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				271D4E2A2748BECB00474099 /* notes.md in Resources */,
+				271D4E2E2748C67600474099 /* Assets.xcassets in Resources */,
 				271D4E212744C1E800474099 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				271D4E1F2744C1E700474099 /* DevoteWidget.swift in Sources */,
+				271D4E2B2748C2F700474099 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +358,7 @@
 				2756276227409DB00077221D /* BlankView.swift in Sources */,
 				276197FC273F07CB0052DC4F /* Constant.swift in Sources */,
 				275627642741CDAC0077221D /* ListRowItemView.swift in Sources */,
+				271D4E2D2748C51E00474099 /* ConstantCoreData.swift in Sources */,
 				276197E0273CA4FD0052DC4F /* Devote.xcdatamodeld in Sources */,
 				276197D4273CA4FA0052DC4F /* DevoteApp.swift in Sources */,
 				275627662741DBB90077221D /* CheckboxStyle.swift in Sources */,
