@@ -585,3 +585,14 @@ The instructor wants us to navigate to the top of the Entry View - entry member.
 
 This spacer added to the bottom of the HStack in Devote Widget Entry View.  Try it on the other Widget Families.  The spacer moves the Text capsule to the left (read left to right).  
 Another way to make such adjustments is to the logo.  Place in the widget and height alternate sizes for widgetFamily != .systemSmall
+
+Time Index 28:24
+
+Now we add a computed method for fontStyle.  What does this do?  Let us take a look at the previews.   Granted, my taste in fonts leaves much to be desired.  But, does seem to be different in the larger widgets.  Ok, we need to provide this computed property in the font for "Just Do It."  It does look some what different.  
+
+This widget family environement property gives us the capability to change and modify the layout and design.  
+
+I still like UIKit (and its predecessor better).  I prefer keeping view and control seperate.  Better yet, I like having another description mechanism for the view and plists, JSON, and XML fit the bill.  But, this SwiftUI does have useful features.
+
+## Testing 
+Does this whole app work?  
